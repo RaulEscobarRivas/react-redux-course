@@ -1,13 +1,13 @@
 import { renderComponent , expect } from '../test_helper';
 import CommentBox from '../../src/components/comment-box';
 
-describe('Given an CommentBox component' , () => {
+describe('Given a CommentBox component' , () => {
 
   it('it should be a function', () => {
   	expect(CommentBox).to.be.a('function');
   });
 
-  describe('When rendering the component', () => {
+  describe('When render', () => {
   	  let component;
 
 	  beforeEach(() => {
@@ -26,7 +26,7 @@ describe('Given an CommentBox component' , () => {
 	    expect(component.find('button')).to.exist;
 	  });
 
-	  it('Then the rendered bugtton should have "Submit Comment" text value', () => {
+	  it('Then the rendered button should have "Submit Comment" text value', () => {
 	    expect(component.find('button')).to.contain('Submit Comment');
 	  });
   });
