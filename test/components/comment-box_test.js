@@ -29,5 +29,30 @@ describe('Given a CommentBox component' , () => {
 	  it('Then the rendered button should have "Submit Comment" text value', () => {
 	    expect(component.find('button')).to.contain('Submit Comment');
 	  });
+
+	  describe('When entering text', () => {
+	  	let comment;
+
+	  	beforeEach(() => {
+	  		comment = 'new comment';
+	  	 	component.find('textarea').simulate('change', comment);
+	  	});
+
+	  	it('Then it should display what is entered', () => {
+	  		expect(component.find('textarea')).to.have.value(comment);
+	  	});
+
+	  	describe('When submitted', () => {
+
+	  		beforeEach(() => {
+	  	 		component.simulate('submit');
+	  		})
+
+	  	  	it('Then it should clear the entered text', () => {
+	  	  		expect(component.find('textarea')).to.have.value('');
+	  	  	});
+	  	});
+	 });
   });
 });
+
