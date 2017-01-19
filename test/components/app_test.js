@@ -3,19 +3,23 @@ import App from '../../src/components/app';
 
 describe('Given an App component' , () => {
 
-  it('it should be a function', () => {
-  	expect(App).to.be.a('function');
-  });
+    it('it should be a function', () => {
+        expect(App).to.be.a('function');
+    });
 
-  describe('When render', () => {
-  	  let component;
+    describe('When render', () => {
+        let component;
 
-	  beforeEach(() => {
-	    component = renderComponent(App);
-	  });
+        beforeEach(() => {
+            component = renderComponent(App);
+        });
 
-	  it('Then it should render a CommentBox', () => {
-	    expect(component.find('.comment-box')).to.exist;
-	  });
-  });
+        it('Then it should render a CommentBox', () => {
+            expect(component.find('.comment-box')).to.exist;
+        });
+
+        it('Then it should render a CommentList', () => {
+            expect(component.find('.comment-list')).to.exist;
+        });
+    });
 });
