@@ -3,12 +3,12 @@ import CommentBox from './comment-box';
 import CommentList from './comment-list';
 
 export default class App extends Component {
-  render() {
-    return (
-      <div>
-    	<CommentBox />
-        <CommentList />
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <CommentBox />
+                <CommentList />
+            </div>
+        );
+    }
 }
