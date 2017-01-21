@@ -2,7 +2,7 @@ import { expect } from '../test_helper';
 import { saveComment } from '../../src/actions';
 import { SAVE_COMMENT } from '../../src/actions/types';
 
-describe('Given action creators', () => {
+describe('Given the Action creators', () => {
     describe('When the saveComment action creator is called', () => {
         let payload;
         let result;

@@ -8,6 +8,7 @@ import chaiJquery from 'chai-jquery';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../src/reducers';
+import uuid from 'uuid';
 
 global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
 global.window = global.document.defaultView;
@@ -33,4 +34,20 @@ $.fn.simulate = function(eventName, value) {
   TestUtils.Simulate[eventName](this[0]);
 };
 
-export {renderComponent, expect};
+function createDummy(name = '') {
+    return {
+        name: name,
+        id: uuid.v1()
+    }
+}
+
+function createRandomString() {
+    return uuid.v1().toString();
+}
+
+export {
+    renderComponent,
+    expect,
+    createDummy,
+    createRandomString
+};
