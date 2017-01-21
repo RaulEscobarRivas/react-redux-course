@@ -3,39 +3,42 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 class CommentBox extends Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
 
-    this.state = {
-      comment: ''
-    };
-  }
+        this.state = {
+            comment: ''
+        };
+    }
 
-  onChangeHandler(event) {
-    this.setState({ comment: event.target.value });
-  }
+    onChangeHandler(event) {
+        this.setState({ comment: event.target.value });
+    }
 
-  onSubmitHandler(event) {
-    event.preventDefault();
+    onSubmitHandler(event) {
+        event.preventDefault();
 
-    this.props.saveComment(this.state.comment);
-    this.setState({ comment: '' });
+        this.props.saveComment(this.state.comment);
+        this.setState({ comment: '' });
   }
 
   render() {
     return (
-      <form 
-        className="comment-box"
-        onSubmit={this.onSubmitHandler.bind(this)}
-      >
-      	<textarea
-          value={this.state.comment}
-          onChange={this.onChangeHandler.bind(this)}
-        />
-      	<button action={"submit"}>
-      			{'Submit Comment'}
-      	</button>
-      </form> 
+        <form 
+            className="comment-box"
+            onSubmit={this.onSubmitHandler.bind(this)}
+        >
+            <h4>{'Add a comment'}</h4>
+            <textarea
+                value={this.state.comment}
+                onChange={this.onChangeHandler.bind(this)}
+            />
+            <div>
+                <button action={"submit"}>
+                    {'Submit Comment'}
+                </button>
+            </div>
+        </form> 
     );
   }
 }
